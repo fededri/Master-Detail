@@ -7,7 +7,7 @@ abstract class MasterDetailFragment : Fragment() {
     abstract fun isTabletMode(): Boolean
 
     companion object {
-        fun create(delegate: MasterDetailDelegate): MasterDetailFragment {
+        fun create(delegate: MasterDetailDelegate): MasterDetailFragmentImpl {
             return MasterDetailFragmentImpl(delegate)
         }
     }

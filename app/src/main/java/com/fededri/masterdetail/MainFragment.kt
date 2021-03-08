@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentFactory
 import androidx.navigation.fragment.NavHostFragment
 import com.fededri.masterdetail_library.MasterDetailDelegate
 import com.fededri.masterdetail_library.MasterDetailFragment
+import com.fededri.masterdetail_library.MasterDetailFragmentImpl
 
 class MainFragment : Fragment() {
 
@@ -18,7 +20,7 @@ class MainFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.main_fragment, container)
 
-        val masterDetailFragment = MasterDetailFragment.create(getMasterDetailActivity())
+        val masterDetailFragment = instantiate(MasterDetailFragmentImpl::class)
 
         childFragmentManager.beginTransaction()
             .add(R.id.fragment_container, masterDetailFragment)
@@ -30,3 +32,5 @@ class MainFragment : Fragment() {
         return activity as MainActivity
     }
 }
+
+

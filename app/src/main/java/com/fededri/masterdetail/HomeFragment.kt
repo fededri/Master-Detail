@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
             val controller = getMasterDetailActivity().provideDetailsNavController()
                 ?: getMasterDetailActivity().provideHomeNavController()
             controller.navigate(R.id.afterDetails)
+
         }
         return view
     }
